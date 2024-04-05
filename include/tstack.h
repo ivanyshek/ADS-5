@@ -1,19 +1,18 @@
 // Copyright 2021 NNTU-CS
 #ifndef INCLUDE_TSTACK_H_
 #define INCLUDE_TSTACK_H_
-
+#include <string>
 template<typename T, int size>
 class TStack {
-private:
+ private:
     T data[size];
     int top;
-public:
+ public:
     TStack() :top(0) {}
     void push(const T& item) {
         if (top <= size - 1) {
             data[top++] = item;
-        }
-        else {
+        } else {
             throw std::string("full");
         }
     }
@@ -25,7 +24,7 @@ T pop() {
         throw std::string("Empty");
     }
 }
-bool isEmpty()const{
+bool isEmpty()const {
     return top == 0;
 }
 T get() const {
