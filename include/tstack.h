@@ -7,6 +7,7 @@ class TStack {
  private:
     T data[size];
     int top;
+
  public:
     TStack() :top(0) {}
     void push(const T& item) {
@@ -19,8 +20,7 @@ class TStack {
 T pop() {
     if (top > 0) {
         return data[--top];
-    }
-    else {
+    } else {
         throw std::string("Empty");
     }
 }
@@ -30,8 +30,7 @@ bool isEmpty()const {
 T get() const {
     if (top > 0) {
         return data[top - 1];
-    }
-    else {
+    } else {
         throw std::string("Empty");
     }
 }
