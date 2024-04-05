@@ -55,33 +55,28 @@ std::string infx2pstfx(std::string inf) {
                 if (flag == 1) {
                     post = post + " " + c;
                     flag = 0;
-                }
-                else {
+                } else {
                     post = post + c;
                 }
-            }
-            else {
+            } else {
                 if (c == '(') {
                     stack1.push(c);	
-                }
-                else {
+                } else {
                     flag = 1;
                     if (stack1.isEmpty()) {
                         stack1.push(c);
-                    }
-                    else {
+                    } else {
                         if (c == ')') {
                             while (stack1.get() != '(') {
                                 post = post + " " + stack1.pop();
                             }
                             stack1.pop();
-                        }
-                        else {
+                        } else {
                             if (priority(c) > priority(stack1.get())) {
                                 stack1.push(c);
-                            }
-                            else {
-                                while ((!stack1.isEmpty()) && (priority(c) <= priority(stack1.get()))) {
+                            } else {
+                                while ((!stack1.isEmpty()) &&
+                                    (priority(c) <= priority(stack1.get()))) {
                                     post = post + " " + stack1.pop();
                                 }
                                 stack1.push(c);
@@ -110,22 +105,19 @@ int eval(std::string post) {
             if (flag == 0) {
                 if (('0' <= c) && (c <= '9')) {
                     str += c;
-                }
-                else {
+                } else {
                     if (str == "") {
                         int b = stack2.pop();
                         int a = stack2.pop();
                         int result = calc(a, b, c);
                         stack2.push(result);
                         flag = 1;
-                    }
-                    else {
+                    } else {
                         stack2.push(stoi(str));
                         str = "";
                     }
                 }
-            }
-            else {
+            } else {
                 flag = 0;
             }
         }
