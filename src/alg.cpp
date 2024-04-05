@@ -60,7 +60,7 @@ std::string infx2pstfx(std::string inf) {
                 }
             } else {
                 if (c == '(') {
-                    stack1.push(c);	
+                    stack1.push(c);
                 } else {
                     flag = 1;
                     if (stack1.isEmpty()) {
@@ -86,7 +86,7 @@ std::string infx2pstfx(std::string inf) {
                 }
             }
         }
-        while(!stack1.isEmpty()){
+        while (!stack1.isEmpty()) {
             post = post + " " + stack1.pop();
         }
         return post;
