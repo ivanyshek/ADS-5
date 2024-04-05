@@ -4,29 +4,29 @@
 #include "tstack.h"
 
 int priority(char c) {
-	int priority = 0;
-	switch (c) {
-	case '(':
-		priority = 0;
-		break;
-	case ')':
-		priority = 1;
-		break;
-	case '+':
-		priority = 2;
-		break;
-	case '-':
-		priority = 2;
-		break;
-	case '*':
-		priority = 3;
-		break;
-	case '/':
-		priority = 3;
-		break;
-	default:
-		break;
-	}
+    int priority = 0;
+    switch (c) {
+        case '(':
+            priority = 0;
+            break;
+        case ')':
+            priority = 1;
+            break;
+        case '+':
+            priority = 2;
+            break;
+        case '-':
+            priority = 2;
+            break;
+        case '*':
+            priority = 3;
+            break;
+        case '/':
+            priority = 3;
+            break;
+        default:
+            break;
+    }
 	return priority;
 }
 
